@@ -1,0 +1,536 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {margin: 0; padding: 0;}
+li {list-style: none;}
+a {text-decoration: none; color: inherit;}
+body {color: 333;  font-family: 'Noto Serif', serif; 
+    overflow-x: hidden; /* 가로스크롤바없애기 */}
+.mobile {display: none;}
+
+/* header */
+header .inner {
+    max-width: 1600px;
+    width: 95%;
+    margin: 0 auto;
+}
+header .inner .hd_top {
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+header .inner .hd_top li {
+    margin-left: 20px;
+    position: relative;
+}
+
+header .inner .hd_top li::before {
+    content : '';
+    width: 1px;
+    height: 10px;
+    position: absolute;
+    top:0;
+    left: -10px;
+    background-color: #333;
+    transform: translateY(50%);
+}
+header .inner .hd_top li:first-child::before {
+    display: none;
+}
+
+header .inner .hd_bottom {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+header .inner .hd_bottom .pc {
+    height: 100%;
+    margin-top: 50px;
+}
+
+header .inner .hd_bottom .pc .gnb {
+    display: flex;
+    justify-content: center;
+    width: 1600px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+header .inner .hd_bottom .pc .gnb .depth01 {
+    /* display: inline-block; */
+    height: 100%;
+    position: relative;
+    padding: 0 120px;
+    
+    
+}
+header .inner .hd_bottom .pc .gnb .depth01:hover .depth02 {
+    display: block;
+    z-index: 1;
+}
+header .inner .hd_bottom .pc .gnb .depth01 .depth02{
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    background-color: #fff;
+    text-align: center;
+    display: none;
+    
+}
+header .inner .hd_bottom .pc .gnb .depth01 .depth02 li:hover{
+    background-color: #b60217;
+    color: #fff;
+    transition: 0.8s;
+    
+}
+header .inner .hd_bottom .pc .gnb .depth01 .depth02 li {
+    padding: 10px;
+}
+
+
+/* .main_visual */
+.main_visual {
+    height: 100vh;
+    position: relative;
+}
+.main_visual div {
+    max-width: 1600px;
+    width: 95%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.main_visual div h2 {
+    font-size: 60px;
+
+}
+.main_visual div p {
+    margin: 15px 0;
+    font-size: 25px;
+}
+.main_visual div a {
+    display: block;
+    margin-top: 40px;
+    width: 500px;
+    text-align: right;
+
+}
+.main_visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* .best */
+.best {
+    max-width: 1600px;
+    width: 95%;
+    margin: 120px auto;
+    position: relative;
+}
+.best > a {
+    display: block;
+    width: 110px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.best h3 {
+    font-size: 50px;
+    padding-top: 50px;
+    color: #b60217;
+}
+.best .best_menu {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap; /* 줄였을때 떨어지도록 */
+    
+}
+.best .best_menu li:first-child {
+    color: #b60217;
+    font-weight: bold;
+}
+.best .best_menu li {
+    margin: 40px 40px 40px 0;
+}
+.best .best_menu li:hover {
+    color: #b60217;
+    font-weight: bold;
+}
+
+/* .list */
+
+.best .list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.best .list .item {
+    width: calc(100% / 4 - 10px);
+}
+.best .list .item figure {
+    width: 100%;
+    height: 420px;
+}
+.best .list .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.best .list .item .text h4 {
+    margin: 10px 0;
+    font-size: 18px;
+
+}
+.best .list .item .text .price {
+    display: flex;
+    flex-wrap: wrap; /* 잡아줘라 공간부족하면 아래로 자동으로 떨어지게 */
+    justify-content: space-between;
+    margin-top: 20px;
+    
+}
+.best .list .item .text .price span {
+    color: #b60217;
+    font-weight: bold;
+    margin-right: 8px;
+}
+.best .list .item .text .price p{
+    text-decoration: line-through;
+    color: darkgrey
+}
+
+/* .slide_text 텍스트 애니메이션 */
+.slide_text {
+    background-color: #b60217;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 60px ;
+}
+.slide_text ul {
+    white-space: nowrap; /* 텍스트 한줄로 잡힘 */
+    animation: slidetext 30s infinite linear ;
+    /* animaion : name 시간 횟수(무한반복) 속도(일정한속도) */
+}
+@keyframes slidetext {
+    0% {
+        transform: translateX(0);
+    } /* 시작점 */
+    100% {
+        transform: translateX(-100%);
+    } /* 종점 */
+}
+.slide_text ul li {
+    display: inline-block;
+    margin-left: 50px;
+    font-style: italic;
+
+}
+.slide_text ul .font {
+    font-family: 'NanumSquareNeo-Variable';
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+/* brand */
+.brand {
+    margin: 150px 0;
+}
+.brand .inner {
+    max-width: 1600px;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.brand .inner .title {
+    width: 500px;
+    height: ;
+}
+.brand .inner .list {
+    width: calc(100% - 500px);
+    display: flex;
+    justify-content: space-between;
+}
+.brand .inner .list .item {
+    width: calc(100% / 2 - 10px);
+    height: 395px;
+    position: relative;
+}
+.brand .inner .list .item figure {
+    width: 100%;
+    height: 100%;
+}
+.brand .inner .list .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.brand .inner .title h3{
+    font-size: 50px;
+    padding-top: 50px;
+    color: #b60217;
+}
+.brand .inner .title p{
+    font-size: 30px;
+    margin: 30px 0 40px ;
+}
+.brand .inner .title a {
+    width: 110px;
+    height: 40px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    line-height: 40px;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.brand .inner .list .item div {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+}
+.brand .inner .list .item div h4 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+
+
+
+/* footer */
+footer p {
+    font-size: 13px;
+    text-align: center;
+    padding: 20px;
+    background-color: #b60217;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+/* 반응형 */
+
+@media all and (max-width:1024px) {
+    header .pc {display: none;}
+    header i.mobile {
+        display: block;
+        font-size: 30px;
+        font-weight: 900;
+        color: #b60217;
+        position: absolute;
+        top: 15px;
+        left: 10px;
+    }
+    header i.mobile span {
+        position: absolute;
+        left: -999999px;
+    }
+    header .inner .hd_bottom {
+        height: 25px;
+    }
+    .best {
+        margin: 80px auto;
+    }
+    
+    .best .list .item figure {
+        height: 250px;
+    }
+    .best .list .item .text h4 {
+        height: 80px;
+    }
+
+    .brand {
+        margin: 100px 0;
+    }
+    .brand .inner {
+        display: block;
+    }
+    .brand .inner .list{
+        width: 100%;
+        /* margin-top: 50px; */
+    }
+    .brand .inner .title {
+        width:  100%;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .brand .inner .title p {
+        font-size: 25px;
+    }
+    .brand .inner .title p br {
+        display: none;
+    }
+    .brand .inner .list {
+        width: 100%;
+    }
+    .brand .inner .list .item {
+        width: calc(100% / 2 - 5px);
+        height: 50vw;
+    }
+    .brand .inner .list .item div {
+        bottom: 20px;
+        left: 20px;
+    }
+    .brand .inner .list .item div h4 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+}/* 1024px 이하 */
+
+
+
+
+@media all and (max-width:767px) {
+    header .inner .hd_top {
+        height: 50px;
+        font-size: 13px;
+    }
+    header .inner .hd_bottom {
+        height: 50px;
+    }
+    header .inner h1 a img {
+        margin-top: 20px;
+    }
+
+    .main_visual div {
+        text-align: center;
+        position: absolute;
+        top: 78%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .main_visual div p {
+        font-size: 20px;
+    }
+    .main_visual div span {
+        background-color: #ffffff83;
+        padding: 0 10px;
+    }
+    .main_visual div a {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .best {
+        margin: 60px auto;
+    }
+    .best > a {
+        height: 30px;
+        line-height: 30px;
+        width: 100px;
+        font-size: 14px;
+    }
+
+    .best h3 {
+        font-size: 30px;
+        padding-top : 30px
+    }
+    .best .best_menu {
+        justify-content: flex-start;
+        font-size: 15px;
+    }
+    .best .best_menu li {
+        margin: 10px;
+    }
+    .best .list .item {
+        width: calc(100% / 2 - 5px);
+        margin: 5px 0 15px;
+    }
+    .best .list .item .text h4 {
+        height: 50px;
+    }
+    /* .best .list .item:nth-child(2) ~ .item {
+        display: none; 
+       
+    } */
+     /* + 바로 뒤의 형제선택자만 삭제
+           ~ 뒤의 모든 형제선택자 삭제 */
+    .best .list .item figure {
+        height: 50vw;
+    }
+
+    .brand .inner .title a {
+        height: 30px;
+        line-height: 30px;
+        width: 100px;
+        font-size: 14px;
+    }
+}/* 767px 이하 */
+
+
+@media all and (max-width:414px){
+    header .inner .hd_top {
+        height: 30px;
+        font-size: 12px;
+    }
+    header i.mobile {
+        font-size: 16px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    .main_visual div h2 {
+        font-size: 40px
+    }
+    .main_visual div p {
+        font-size: 16px
+    }
+    .main_visual div span {
+        font-size: 14px
+    }
+
+    .best .list .item .text h4 {
+        font-size: 15px;
+    }
+    .best .list .item .text .price {
+        font-size: 15px;
+    }
+
+    .brand {
+        margin: 50px 0;
+    }
+    .brand .inner .list {
+        flex-wrap: wrap;
+
+    }
+    .brand .inner .list .item{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .brand .inner .title a {
+        width: 222px;
+    }
+}/* 414px 이하 */

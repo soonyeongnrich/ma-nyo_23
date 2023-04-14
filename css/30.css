@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0;}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+li {
+    list-style: none;
+}
+body {
+    color: #333;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* 메뉴보기, 햄버거아이콘 스타일 */
+.xi-bars {display: none;}
+.xi-bars span {
+    position: absolute;
+    left: -999999999999999999999999999px;
+} /* 메뉴보기 없애는 방법*/
+
+
+/* header */
+header{
+    width: calc(100% - 60px);
+    height: 100px;
+    background-color: #ffffffcb;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+}
+header .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; /* 높이설정해야함 */
+}
+header .inner ul li {
+    display: inline-block;
+    margin: 0 20px;
+    
+}
+
+/* .main_visual */
+.main_visual {
+    height: 100vh; /* ⭐⭐⭐⭐⭐자동높이⭐⭐⭐⭐⭐⭐ */
+    position: relative;
+    
+}
+.main_visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+.main_visual div {
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    left: 0;
+   /*  transform: translateY(-35%); */
+    color: #fff;
+    text-align: center; /* 가운데정렬하는법 width 100% + text-align: center ⭐⭐*/
+    
+}
+.main_visual div h2{
+    font-size: 80px;
+    font-weight: lighter;
+}
+.main_visual div p{
+    font-size: 20px;
+    font-weight: lighter;
+}
+.main_visual div a {
+    margin-top: 50px;
+    border-radius: 50px;
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #ffffff7a;
+    color: #1a1919;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+/* .con01 */
+.cont01 {
+    max-width: 1280px; /* 반응형 제작 시 미리 이렇게 작성해야함 */
+    width: 95%; /* 여백있어야하기때문에 100% 아님 */
+    margin: 100px auto;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cont01 figure {
+    width: 32%;
+    height: 450px;
+    
+}
+.cont01 figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cont01 div {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+}
+.cont01 div h3 {
+    font-size: 50px ;
+}
+.cont01 div p {
+    margin:  15px 0 40px 0 ;
+}
+.cont01 div a {
+    text-align: right;
+}
+
+/* 1024px이하일때 스타일 적용 */
+/* 밑에처럼 띄어쓰기해야함 걍외워 ⭐⭐⭐⭐⭐ */
+
+@media all and (max-width:1024px) {
+    header nav {display: none;}
+    .xi-bars {
+        display: block; 
+        font-size: 30px; 
+        margin-right: 20px;
+    }
+    .cont01 {
+        flex-wrap: wrap; /* flex가 적용되어 있어야 사용가능 */
+    }
+    .cont01 figure {
+        width: 49%;
+        margin-bottom: 15px;
+    }
+    .cont01 div {
+        width: 100%;
+    }
+
+}
+/* 1024 이하 */
+
+
+
+/* 767px 이하일때 스타일 적용 - 태블릿 */
+@media all and (max-width:767px){
+    header {
+        height: 70px;
+    }
+    .main_visual div h2 {
+        font-size: 40px;
+    }
+    .main_visual div p {
+        font-size: 16px;
+    }
+}
+
+/* 767px 이하 */
+
+/* 414px 이하일때 스타일 적용 - 모바일 */
+
+@media all and (max-width:414px) {
+    .cont01 figure {
+        width: 100%;
+        height: 250px;
+        margin: 10px 0;
+    }
+    .cont01 {
+        margin: 30px auto;
+    }
+}
+/* 414px 이하 */
